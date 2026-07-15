@@ -6,7 +6,9 @@ build-backend = "hatchling.build"
 name = "glinet"
 description = "Home Assistant GL-iNet community integration"
 readme = "README.md"
-requires-python = ">=3.13.2"
+# Upper bound: homeassistant 2026.2.3 and pytest-homeassistant-custom-component
+# 0.13.316 do not support Python 3.14; raise it together with those pins
+requires-python = ">=3.13.2,<3.14"
 dynamic = ["version"]
 dependencies = [
     "homeassistant>=2025.9.0",
